@@ -8,7 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 
-import { ParseIntPipe } from './../../common/parse-int/parse-int.pipe';
+import { ParseIntPipe } from '../../../common/parse-int/parse-int.pipe';
 import { CustormersService } from './../../services/custormers/custormers.service';
 import {
   CreateCustomerDto,

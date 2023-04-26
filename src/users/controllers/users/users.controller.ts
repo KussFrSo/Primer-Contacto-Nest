@@ -8,9 +8,9 @@ import {
   Put,
 } from '@nestjs/common';
 
-import { ParseIntPipe } from './../../common/parse-int/parse-int.pipe';
-import { UsersService } from './../../services/users/users.service';
-import { CreateUserDto, UpdateUserDto } from './../../dtos/users.dtos';
+import { ParseIntPipe } from '../../../common/parse-int/parse-int.pipe';
+import { UsersService } from '../../services/users/users.service';
+import { CreateUserDto, UpdateUserDto } from '../../dtos/users.dtos';
 
 @Controller('users')
 export class UsersController {
