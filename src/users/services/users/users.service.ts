@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { User } from './../../entities/users.entity';
 import { Order } from './../../entities/orders.entity';
-import { CreateUserDto, UpdateUserDto } from '../../dtos/users.dtos';
+import { CreateUserDto, UpdateUserDto } from '../../dtos/users.dto';
 
 import { ProductsService } from './../../../products/services/products/products.service';
 

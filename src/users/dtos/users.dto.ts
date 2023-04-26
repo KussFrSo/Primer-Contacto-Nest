@@ -1,4 +1,4 @@
-import { PartialType } from '@nestjs/mapped-types';
+import { PartialType, ApiProperty } from '@nestjs/swagger';
 import {
   IsString,
   IsNotEmpty,
@@ -7,18 +7,34 @@ import {
 } from 'class-validator';
 
 export class CreateUserDto {
+  @ApiProperty({
+    description: 'Name',
+    example: 'Admin01',
+  })
   @IsString()
   @IsNotEmpty()
   name: string;
 
+  @ApiProperty({
+    description: 'Role',
+    example: 'Admin',
+  })
   @IsString()
   @IsNotEmpty()
   rol: 'admin' | 'client' | 'user';
 
+  @ApiProperty({
+    description: 'Email',
+    example: 'admin01@gmail.com',
+  })
   @IsEmail()
   @IsNotEmpty()
   email: string;
 
+  @ApiProperty({
+    description: 'Password',
+    example: '12345aA!',
+  })
   @IsString()
   @IsNotEmpty()
   @IsStrongPassword({
