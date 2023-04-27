@@ -38,6 +38,10 @@
 > * Evitar parametros incorrectos con:
 >   - **Whitelist** ➡️ Ignora los atributos que no estén definidos en el DTO. 
 >   - **ForbidNonWhitelisted** ➡️ Alerta de un error al cliente cuando se envía un atributo no definido en el DTO.
+> - Reorganización de la estructura del proyecto
+> - Modularización del proyecto
+> - EndPoint Order
+> - Documentación con Swagger automática
 
 
 ## Installation
