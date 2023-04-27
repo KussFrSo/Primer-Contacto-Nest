@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigType } from '@nestjs/config';
 import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
@@ -22,13 +23,19 @@ import config from './config';
         SQL_DB_USERNAME: Joi.string().required(),
       }),
     }),
-    TypeOrmModule.forRoot({
-      type: 'mariadb',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
-      database: 'test',
+    TypeOrmModule.forRootAsync({
+      inject: [config.KEY],
+      useFactory: (configService: ConfigType<typeof config>) => {
+        const { username, host, name, password, port } = configService.mariadb;
+        return {
+          type: 'mariadb',
+          host,
+          port,
+          username: username,
+          password,
+          database: name,
+        };
+      },
     }),
     ProductsModule,
     UsersModule,
