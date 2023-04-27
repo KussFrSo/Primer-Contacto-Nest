@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  mariadb:
+      image: mariadb:10.2
+      ports:
+        - 3306:3306
+      environment:
+        MARIADB_USER: user
+        MARIADB_PASSWORD: user
+        MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
+        MYSQL_DATABASE: test
+      volumes:
+        - ./volumes/mariadb-sql:/var/lib/mysql
