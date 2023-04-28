@@ -1,4 +1,4 @@
-import { EntitySchema } from 'typeorm';
+import { EntitySchema, EntitySchemaColumnOptions } from 'typeorm';
 import { Product } from '../entities/products.entity';
 
 const ProductSchema = new EntitySchema<Product>({
@@ -30,6 +30,16 @@ const ProductSchema = new EntitySchema<Product>({
     image: {
       type: String,
     },
+
+    createAt: {
+      type: Date,
+      createDate: true,
+    } as EntitySchemaColumnOptions,
+
+    updateAt: {
+      type: Date,
+      updateDate: true,
+    } as EntitySchemaColumnOptions,
   },
 });
 
