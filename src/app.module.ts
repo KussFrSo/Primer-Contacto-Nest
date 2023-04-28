@@ -34,6 +34,8 @@ import config from './config';
           username: username,
           password,
           database: name,
+          synchronize: false,
+          autoLoadEntities: true,
         };
       },
     }),
