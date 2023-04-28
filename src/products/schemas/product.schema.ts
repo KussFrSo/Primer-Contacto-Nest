@@ -1,6 +1,7 @@
 import { EntitySchema } from 'typeorm';
+import { Product } from '../entities/products.entity';
 
-const ProductSchema = new EntitySchema({
+const ProductSchema = new EntitySchema<Product>({
   name: 'Product',
   tableName: 'Product',
   columns: {
